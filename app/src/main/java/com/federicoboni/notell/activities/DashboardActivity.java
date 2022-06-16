@@ -205,8 +205,9 @@ public class DashboardActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.logout) {
             getAlertDialog(getResources().getString(R.string.alert_log_out_text), (dialog, id) -> {
                 UserDao.getInstance().logOut();
-                startActivity(new Intent(DashboardActivity.this, AuthenticationActivity.class));
                 finish();
+                startActivity(new Intent(DashboardActivity.this, AuthenticationActivity.class));
+
                 dialog.cancel();
                 Logger.i(Logger.SCOPE.DASHBOARD_ACTIVITY, Logger.ACTION.LOG_OUT);
             }).show();

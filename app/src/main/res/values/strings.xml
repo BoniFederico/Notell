@@ -45,7 +45,7 @@
     <string name="alert_delete_note">Do you want to delete the note?</string>
     <string name="alert_yes">Yes</string>
     <string name="alert_no">No</string>
-    <string name="alert_share_mex">"Do you want to share this note? \\n Share: "</string>
+    <string name="alert_share_mex">"Do you want to share this note? \n Share: "</string>
     <string name="alert_hint_sh_code">CODE</string>
     <string name="alert_add_share_mex">Paste the code of the shared note:</string>
     <!--Settings -->

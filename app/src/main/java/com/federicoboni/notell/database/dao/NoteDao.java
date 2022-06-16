@@ -29,29 +29,34 @@ public class NoteDao {
     private static final String IMAGES_SHARED_FOLDER = ConfigUtils.getInstance().getStringProperty(ConfigUtils.ConfigName.IMAGES_SHARED_FOLDER);
     private static final String EMPTY_STRING = "";
     private static NoteDao noteDao;
-    private final FirebaseFirestore firebaseFirestore;
+
 
     private NoteDao() {
-        firebaseFirestore = FirebaseFirestore.getInstance();
+
     }
 
     public static synchronized NoteDao getInstance() {
         if (noteDao == null) {
             noteDao = new NoteDao();
         }
+
         return noteDao;
     }
 
     public synchronized Task<List<Note>> getAllNotes() {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         Query query = firebaseFirestore.collection(COLLECTION_NAME).document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).collection(DOCUMENT_NAME).orderBy(ORDERED_BY, Query.Direction.DESCENDING);
         return query.get().continueWith(task -> task.getResult().toObjects(Note.class));
     }
 
     public synchronized Task<Note> getNote(String documentId) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         DocumentReference docRef = firebaseFirestore.collection(COLLECTION_NAME).document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).collection(DOCUMENT_NAME).document(documentId);
         return docRef.get().continueWith(task -> task.getResult().toObject(Note.class));
     }
+
     public synchronized Task<Void> addNote(Note note) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         if (!note.getImageUriPath().equals(EMPTY_STRING)) {
             note.setImageStoreName(UUID.randomUUID().toString());
         }
@@ -65,11 +70,13 @@ public class NoteDao {
             }
         });
     }
+
     private synchronized Task<Void> addImage(Note note) {
         return FirebaseStorage.getInstance().getReference().child(NOTE_IMAGE_FOLDER_START_NAME + FirebaseAuth.getInstance().getCurrentUser().getUid() + "/" + note.getImageStoreName()).putFile(Uri.parse(note.getImageUriPath())).continueWith(t -> null);
     }
 
     public synchronized Task<Void> updateNote(Note note) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         DocumentReference docRef = firebaseFirestore.collection(COLLECTION_NAME).document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).collection(DOCUMENT_NAME).document(note.getDocumentId());
         return getNote(note.getDocumentId()).continueWithTask(task -> {
             Note oldNote = task.getResult();
@@ -86,6 +93,7 @@ public class NoteDao {
     }
 
     public synchronized Task<Void> updateNoteWithoutImage(Note note) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         DocumentReference docRef = firebaseFirestore.collection(COLLECTION_NAME).document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).collection(DOCUMENT_NAME).document(note.getDocumentId());
         return docRef.set(note);
     }
@@ -95,6 +103,7 @@ public class NoteDao {
     }
 
     public synchronized Task<Void> deleteNote(Note note) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         if (note.getDocumentId() == null) {
             return null;
         } else {
@@ -113,6 +122,7 @@ public class NoteDao {
     }
 
     public synchronized Task<Void> shareNote(Note note, String id) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         DocumentReference docRef = firebaseFirestore.collection(COLLECTION_NAME).document(NOTES_SHARED_DOC_NAME).collection(id).document();
         if (!note.getImageRealPath().equals(EMPTY_STRING)) {
             String path = IMAGES_SHARED_FOLDER + "/" + note.getImageStoreName();
@@ -128,6 +138,7 @@ public class NoteDao {
     }
 
     public synchronized Task<List<Note>> getSharedNote(String id) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         Query query = firebaseFirestore.collection(COLLECTION_NAME).document(NOTES_SHARED_DOC_NAME).collection(id).orderBy(ORDERED_BY, Query.Direction.DESCENDING);
         return query.get().continueWith(task -> task.getResult().toObjects(Note.class)).continueWithTask(task -> {
             List<Note> sn = task.getResult();
@@ -151,6 +162,7 @@ public class NoteDao {
     }
 
     public synchronized Task<Void> deleteSharedNote(String sharedNoteId, Note note) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         CollectionReference colRef = firebaseFirestore.collection(COLLECTION_NAME).document(NOTES_SHARED_DOC_NAME).collection(sharedNoteId);
         return colRef.get().continueWithTask(w -> {
             List<Note> notes = w.getResult().toObjects(Note.class);

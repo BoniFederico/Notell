@@ -15,7 +15,6 @@ import java.util.Objects;
 public class UserDao {
 
     private static UserDao userDao;
-    private String username;
 
     private UserDao() {
 
@@ -39,12 +38,8 @@ public class UserDao {
     }
 
     public synchronized String getUsername() {
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            return null;
-        } else if (username == null) {
-            username = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
-        }
-        return username;
+        return FirebaseAuth.getInstance().getCurrentUser() == null ? null : FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
+
     }
 
     public synchronized Task<OpStatus> sendResetEmail(String email) {
