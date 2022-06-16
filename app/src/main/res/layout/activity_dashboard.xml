@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/csl_dash_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="1"
+    tools:context=".activities.DashboardActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_dash_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:alpha="1"
+
+        android:visibility="gone"
+        app:buttonGravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_dash_note_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:paddingTop="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sv_dash_search_bar"
+        app:layout_constraintVertical_bias="0.0"></androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_dash_add_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:contentDescription="@string/image_add_note_description"
+
+        android:src="@drawable/ic_symbol_add_24"
+        app:backgroundTint="?attr/colorPrimary"
+        app:fabCustomSize="@dimen/act_butt_dashboard_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/image_dash_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:alpha="1"
+        android:contentDescription="@string/image_grad_description"
+        app:layout_constraintBottom_toBottomOf="@+id/rcv_dash_note_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/gradient_shadow" />
+
+    <SearchView
+        android:id="@+id/sv_dash_search_bar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/search_bar_size"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_rounded_border_primary"
+        android:iconifiedByDefault="false"
+        android:paddingBottom="20dp"
+        android:queryHint="@string/dashboard_search_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_dash_toolbar"
+        app:queryHint="@string/dashboard_search_hint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

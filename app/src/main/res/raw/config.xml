@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>Properties</comment>
+
+    <entry key="NUM_OF_COLS_PROPERTY_NAME">columnNumberPreference</entry> <!-- Name of the DefaultSharedProperties -->
+    <entry key="IMAGE_IN_PREV_PROPERTY_NAME">imagePreviewPreference</entry> <!-- Name of the DefaultSharedProperties  -->
+
+    <entry key="LIST_CHAR">•</entry> <!-- Character used for lists inside notes -->
+    <entry key="WAIT_TIME_FOR_SEARCH">500</entry> <!-- in ms -->
+
+
+    <entry key="NOTES_COLL_NAME">NotesCollection</entry> <!-- Note Collection name -->
+    <entry key="NOTES_DOC_NAME">NotesDocument</entry> <!-- Note Document name for each user -->
+    <entry key="NOTE_IMAGE_FOLDER_START_NAME">images-</entry>
+
+    <entry key="NOTES_SHARED_DOC_NAME">SharedNotes</entry> <!-- Document for shared notes -->
+    <entry key="IMAGES_SHARED_FOLDER">SharedImages</entry> <!-- Firebase Storage Folder for images of shared notes -->
+
+    <entry key="NOTE_ORDER_PROP">date</entry> <!-- note property to use for sorting in DashboardActivity -->
+
+    <entry key="NUM_OF_CACHED_IMG">20</entry>
+
+    <entry key="MAX_LENGTH_TEXT_PREV">80</entry> <!-- max number of character in note preview-->
+    <entry key="MAX_ROWS_TEXT_PREV">4</entry> <!-- max number of rows in note preview-->
+    <entry key="END_CHAR_TEXT_PREV">...</entry> <!-- ending string when stemming note in note preview -->
+
+    <entry key="EMAIL_REGEX">^[A-Za-z0-9+_.-]+@(.+)$</entry>
+    <entry key="USERNAME_REGEX">^[a-zA-Z0-9]{6,12}$</entry> <!-- only alphanumeric characters, min 6 max 12 characters -->
+    <entry key="PASSWORD_REGEX">^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$</entry> <!-- At least one letter, one number, min 6 characters -->
+
+    <entry key="DATE_PATTERN">E, dd MMM yyyy HH:mm</entry> <!-- Date pattern for Note date time visualization -->
+
+    <entry key="DEBUG">true</entry> <!--Enable and disable logging (true or false) -->
+</properties>

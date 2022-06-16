@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--><color name="purple_200">#FFBB86FC</color>
+     <color name="purple_500">#FF6200EE</color>
+     <color name="purple_700">#FF3700B3</color>
+     <color name="teal_200">#FF03DAC5</color>
+     <color name="teal_700">#FF018786</color>-->
+
+    <!-- <color name="background_link_selection">#E4D4D4</color> -->
+
+    <!-- White to Black gradations -->
+    <color name="white">#FFFFFF</color>
+    <color name="grey_0">#DDDDDD</color>
+    <color name="grey_1">#E9E9E9</color>
+    <color name="grey_2">#bfbfbf</color>
+    <color name="grey_3">#858585</color>
+    <color name="grey_4">#646464</color>
+    <color name="grey_5">#444444</color>
+    <color name="grey_6">#494343</color>
+    <color name="grey_7">#242424</color>
+    <color name="grey_8">#151515</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+
+    <!-- Brand Design colors -->
+    <color name="purple_0">#8c709a</color>
+    <color name="purple_1">#4c305a</color>
+    <color name="purple_2">#2d113b</color>
+    <color name="purple_3">#1b1019</color>
+
+    <!-- Notes Custom Colors -->
+    <color name="notell_green">#FF00695C</color>
+    <color name="notell_blue">#FF1565C0</color>
+    <color name="notell_red">#FF692100</color>
+    <color name="notell_yellow">#FFB1761F</color>
+</resources>

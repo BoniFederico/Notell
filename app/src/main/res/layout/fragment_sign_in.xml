@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_signin_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SignInFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/csl_signin_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_signin_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/sign_in_title"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_signin_email"
+            android:layout_width="320dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/shape_rounded_border_primary"
+            android:drawableStart="@drawable/ic_symbol_user_24"
+            android:drawablePadding="18dp"
+            android:ems="10"
+            android:hint="@string/sign_in_email_hint"
+            android:inputType="text|textEmailAddress"
+            android:paddingStart="20dp"
+
+            android:paddingEnd="15dp"
+            android:paddingBottom="20dp"
+            android:textColorHighlight="?attr/colorPrimaryVariant"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan|adjustResize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_signin_title" />
+
+        <EditText
+            android:id="@+id/edit_signin_password"
+            android:layout_width="320dp"
+            android:layout_height="65dp"
+            android:background="@drawable/shape_rounded_border_primary"
+            android:drawableStart="@drawable/ic_symbol_password_24"
+            android:drawablePadding="18dp"
+            android:ems="10"
+            android:hint="@string/sign_in_password_hint"
+            android:inputType="text|textPassword"
+            android:paddingStart="20dp"
+            android:paddingEnd="15dp"
+
+            android:paddingBottom="20dp"
+
+            android:textColorHighlight="?attr/colorPrimaryVariant"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan|adjustResize"
+            app:layout_constraintEnd_toEndOf="@+id/edit_signin_email"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/edit_signin_email"
+            app:layout_constraintTop_toBottomOf="@+id/edit_signin_email" />
+
+        <TextView
+            android:id="@+id/text_signin_forgot_pass_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in_forgot_password_link"
+            android:textColor="?attr/colorPrimaryVariant"
+
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/edit_signin_password"
+            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintStart_toStartOf="@+id/edit_signin_password"
+            app:layout_constraintTop_toBottomOf="@+id/edit_signin_password" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_signin_send"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/shape_rounded_filled_primary"
+            android:backgroundTint="?attr/colorPrimary"
+            android:text="@string/sign_in_button"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_signin_forgot_pass_link" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/csl_signin_hint_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:foregroundGravity="center|center_horizontal"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_signin_send">
+
+            <TextView
+                android:id="@+id/text_signin_hint_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="0dp"
+                android:text="@string/sign_in_sign_up_label"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_signin_hint_reg_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/sign_in_sign_up_link"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/text_signin_hint_reg"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

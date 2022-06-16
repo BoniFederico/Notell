@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">Notell</string>
+
+    <!--  Sign In Fragment -->
+    <string name="sign_in_title">Welcome to Notell!</string>
+    <string name="sign_in_email_hint">Email</string>
+    <string name="sign_in_password_hint">Password</string>
+    <string name="sign_in_forgot_password_link">Forgot password?</string>
+    <string name="sign_in_button">Sign in</string>
+    <string name="sign_in_sign_up_label">Don\'t have an account?</string>
+    <string name="sign_in_sign_up_link">Sign up here!</string>
+
+    <!-- Sign Up Fragment -->
+    <string name="sign_up_title">Sign up now!</string>
+    <string name="sign_up_email_hint">Email</string>
+    <string name="sign_up_password_hint">Password</string>
+    <string name="sign_up_username_hint">Username</string>
+    <string name="sign_up_button">Sign up</string>
+    <string name="sign_up_sign_in_label">Already have an account?</string>
+    <string name="sign_up_sign_in_link">Sign in!</string>
+    <!-- Reset Password Fragment -->
+    <string name="reset_pss_title">Reset password</string>
+    <string name="reset_pss_body">Enter the email associated with your account and we\'ll send an email with instructions to reset your password.</string>
+    <string name="reset_pss_email_hint">Email</string>
+    <string name="reset_pss_button">Send instruction</string>
+    <string name="reset_pss_sign_in_link">Go back to Sign in page!</string>
+
+    <!-- Item Note Card Placeholders -->
+    <string name="note_card_tag_ph">Tag Label</string>
+    <string name="note_card_title_ph">This is the title</string>
+    <string name="note_card_body_ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper hendrerit maximus. Suspendisse potenti. Vestibulum neque mi, fringilla ut purus ut, ornare porttitor turpis.</string>
+    <string name="note_card_date_ph">Dom, 24 mag 2022 10:03</string>
+
+    <!-- Dashboard Activity-->
+    <string name="dashboard_search_hint">Search</string>
+    <string name="dashboard_title">%1$s\' Notell</string>
+    <!-- Menus -->
+    <string name="menu_note_edit">Edit</string>
+    <string name="menu_note_delete">Delete</string>
+    <string name="menu_note_share">Share</string>
+    <!--Alert & Dialog -->
+    <string name="dialog_waiting_mex">Loading...</string>
+    <string name="alert_log_out_text">Are you sure you want to log out?</string>
+    <string name="alert_delete_image_text">Do you want to delete this image?</string>
+    <string name="alert_delete_note">Do you want to delete the note?</string>
+    <string name="alert_yes">Yes</string>
+    <string name="alert_no">No</string>
+    <string name="alert_share_mex">"Do you want to share this note? \\n Share: "</string>
+    <string name="alert_hint_sh_code">CODE</string>
+    <string name="alert_add_share_mex">Paste the code of the shared note:</string>
+    <!--Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_dashboard_subtitle">Dashboard</string>
+    <string name="settings_property_title_one_col">One column per rows</string>
+    <string name="settings_property_title_img_prev">Show image preview</string>
+    <string name="settings_property_body_one_col">Show just one column per rows in dashboard by default.</string>
+    <string name="settings_property_body_img_prev">SHow image preview in the card when the note has an image.</string>
+
+    <!-- Note Activity -->
+
+    <string name="note_title_hint">Note title</string>
+    <string name="note_tag_hint">Tag</string>
+    <string name="note_date_ph">DateTime</string>
+    <string name="note_body_hint">Start typing your note...</string>
+
+    <!-- Toast Messages -->
+    <string name="toast_sign_up_success">Registration completed successfully. Check your email!</string>
+    <string name="toast_sign_up_failure_already_present">User already present.</string>
+    <string name="toast_sign_up_failure_not_correct">Please provide valid credentials.</string>
+    <string name="toast_sign_up_failure_username_problem">Cannot set username :(</string>
+    <string name="toast_sign_up_failure_generic_error">Generic error occurs.</string>
+
+    <string name="toast_sign_in_failure_not_ex">Account does not exist!</string>
+    <string name="toast_sign_in_failure_wrong">Credentials are wrong!</string>
+    <string name="toast_sign_in_failure_not_verified">Email must be verified first!</string>
+
+    <string name="toast_reset_pss_success">Mail successfully sent! Check your email!</string>
+    <string name="toast_reset_pss_failure">An error occurs while sending the email :(</string>
+
+    <string name="toast_note_delete_success">Note deleted!</string>
+    <string name="toast_note_delete_failure">Cannot delete the note :(</string>
+    <string name="toast_note_set_permission_for_images">You must set permissions for adding an image :(</string>
+    <string name="toast_note_generic_error_image">An error occurs :(</string>
+    <string name="toast_note_cannot_save_empty">You must set a title for your note!</string>
+    <string name="toast_note_created_successful">Note successfully saved!</string>
+    <string name="toast_note_created_failure">It seems something gone wrong :(</string>
+
+    <string name="toast_validation_email_failure">It seems your email is not well formed!</string>
+    <string name="toast_validation_password_failure">It seems your password is not well formed. Password must have  at least 6 characters, one letter, one number!</string>
+    <string name="toast_validation_username_failure">It seems your username is not well formed. Username must have from 6 to 12 alphanumeric characters!</string>
+
+    <string name="toast_alert_share_successful">Note successfully shared!</string>
+    <string name="toast_alert_share_failure">Cannot share the note :(</string>
+    <string name="toast_alert_get_share_successful">Note imported successfully!</string>
+    <string name="toast_alert_get_share_failure">Note does not exist!</string>
+
+    <!-- Exceptions Toasts -->
+    <string name="toast_cannot_set_action_bar">Cannot set action bar :(</string>
+    <string name="toast_cannot_set_tags">Cannot load tags :(</string>
+    <string name="toast_cannot_load_shared_note">An error occur while downloading the shared note :(</string>
+    <string name="toast_cannot_load_image">Cannot load note image :(</string>
+    <string name="toast_problem_server">A problem occur with the server :(</string>
+    <string name="toast_problem_store_img">Cannot save images in your device :(</string>
+
+    <!--Images content descriptions -->
+    <string name="image_logo_description">Notell logo</string>
+    <string name="image_grad_description">Gradient background</string>
+    <string name="image_add_note_description">Add note</string>
+    <string name="image_add_image_description">Add image</string>
+    <string name="image_save_note_description">Save note</string>
+    <string name="image_change_color_description">Change color</string>
+    <string name="image_red_butt_description">Set red color</string>
+    <string name="image_yellow_butt_description">Set yellow color</string>
+    <string name="image_blue_butt_description">Set blue color</string>
+    <string name="image_green_butt_description">Set green color</string>
+    <string name="image_note_menu_description">Note menu</string>
+    <!-- Automatic added strings from settings-->
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_settings">Settings</string>
+
+
+</resources>

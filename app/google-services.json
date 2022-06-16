@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "352349803876",
+    "project_id": "notell-d8c29",
+    "storage_bucket": "notell-d8c29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352349803876:android:1aefda54e2475925459671",
+        "android_client_info": {
+          "package_name": "com.federicoboni.notell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352349803876-acoo5cmt7429kjfq4env2fk62fqtctkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqkiLn8gfGW_D86mFr2llh7jL4lpYHBb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352349803876-acoo5cmt7429kjfq4env2fk62fqtctkf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

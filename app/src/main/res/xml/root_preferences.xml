@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreferenceCompat
+        app:defaultValue="false"
+        app:key="columnNumberPreference"
+        app:summaryOff="@string/settings_property_body_one_col"
+        app:summaryOn="@string/settings_property_body_one_col"
+        app:title="@string/settings_property_title_one_col" />
+
+    <SwitchPreferenceCompat
+        app:defaultValue="false"
+        app:key="imagePreviewPreference"
+        app:summaryOff="@string/settings_property_body_img_prev"
+        app:summaryOn="@string/settings_property_body_img_prev"
+        app:title="@string/settings_property_title_img_prev" />
+</PreferenceScreen>

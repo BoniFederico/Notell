@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/csl_note_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".activities.NoteActivity">
+
+  <androidx.appcompat.widget.Toolbar
+      android:id="@+id/tb_note_toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:alpha="1"
+
+      app:buttonGravity="center_vertical"
+      app:layout_constraintTop_toTopOf="parent">
+
+
+    <EditText
+        android:id="@+id/edit_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/note_title_hint"
+
+        android:includeFontPadding="false"
+        android:inputType="text"
+        android:lineSpacingExtra="0dp"
+        android:maxLength="80"
+        android:paddingRight="45dp"
+        android:textColorHint="#6C6C6C"
+        android:textCursorDrawable="@null"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="4dp" />
+  </androidx.appcompat.widget.Toolbar>
+
+  <ImageView
+      android:id="@+id/image_note_menu"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="24dp"
+      app:layout_constraintBottom_toBottomOf="@+id/tb_note_toolbar"
+      app:layout_constraintEnd_toEndOf="@+id/tb_note_toolbar"
+      app:layout_constraintTop_toTopOf="@+id/tb_note_toolbar"
+      app:srcCompat="@drawable/ic_symbol_menu_24" />
+
+  <FrameLayout
+      android:id="@+id/fl_note_tag_label"
+      android:layout_width="wrap_content"
+      android:layout_height="35dp"
+      android:layout_marginTop="16dp"
+      android:gravity="center"
+
+      android:minWidth="150dp"
+      android:visibility="visible"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tb_note_toolbar"
+      tools:visibility="visible">
+
+
+    <ImageView
+        android:id="@+id/image_note_tag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:adjustViewBounds="true"
+        android:background="@drawable/shape_tag"
+        android:backgroundTint="@color/notell_green"
+        android:cropToPadding="false"
+        android:hapticFeedbackEnabled="false"
+        android:scaleType="fitXY" />
+
+    <AutoCompleteTextView
+        android:id="@+id/text_note_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:completionThreshold="1"
+        android:dropDownWidth="300dp"
+        android:dropDownHeight="300dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:gravity="center"
+        android:hint="@string/note_tag_hint"
+        android:inputType="text"
+        android:maxLength="18"
+
+        android:paddingStart="30dp"
+        android:paddingEnd="40dp"
+        android:textColor="@color/white"
+        android:textColorHint="#C4C4C4"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+  </FrameLayout>
+
+  <TextView
+      android:id="@+id/text_note_date"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="32dp"
+      android:alpha="0.6"
+      android:fontFamily="@font/ubuntu_light"
+      android:text="@string/note_date_ph"
+      android:textColor="@color/grey_3"
+      android:textSize="14sp"
+      app:layout_constraintBottom_toBottomOf="@+id/fl_note_tag_label"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/fl_note_tag_label" />
+
+  <ScrollView
+      android:id="@+id/sv_note_body"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="100dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/fl_note_tag_label">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/csl_note_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_note_tag_label">
+
+      <ImageView
+          android:id="@+id/image_note_picture"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:adjustViewBounds="true"
+          android:visibility="gone"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:visibility="visible">
+
+      </ImageView>
+
+      <EditText
+          android:id="@+id/edit_note_body"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/transparent"
+          android:fontFamily="sans-serif-light"
+          android:gravity="top"
+          android:hint="@string/note_body_hint"
+          android:lineSpacingExtra="8sp"
+          android:minHeight="800dp"
+          android:paddingStart="20dp"
+          android:paddingTop="20dp"
+          android:paddingEnd="15dp"
+          android:paddingBottom="20dp"
+          android:textColorHighlight="@color/notell_green"
+          android:textColorLink="#FFFFFF"
+          android:textCursorDrawable="@null"
+          android:textSize="19sp"
+          app:layout_constraintTop_toBottomOf="@+id/image_note_picture"
+          tools:layout_editor_absoluteX="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </ScrollView>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/csl_note_color_icons"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginBottom="24dp"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      tools:visibility="visible">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_note_green_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/image_green_butt_description"
+        android:visibility="visible"
+        app:backgroundTint="@color/notell_green"
+        app:fabCustomSize="@dimen/act_butt_color_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fab_note_blue_icon"
+        app:tint="@android:color/white"
+        tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_note_blue_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/image_blue_butt_description"
+        android:visibility="visible"
+        app:backgroundTint="@color/notell_blue"
+        app:fabCustomSize="@dimen/act_butt_color_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fab_note_yellow_icon"
+        app:tint="@android:color/white"
+        tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_note_yellow_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/image_yellow_butt_description"
+        android:visibility="visible"
+        app:backgroundTint="@color/notell_yellow"
+        app:fabCustomSize="@dimen/act_butt_color_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fab_note_red_icon"
+        app:tint="@android:color/white"
+        tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_note_red_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/image_red_butt_description"
+        android:cropToPadding="false"
+        android:visibility="visible"
+        app:backgroundTint="@color/notell_red"
+        app:fabCustomSize="@dimen/act_butt_color_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/transparent"
+        tools:visibility="visible" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab_note_save_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="25dp"
+
+      android:layout_marginBottom="32dp"
+      android:clickable="true"
+      android:contentDescription="@string/image_save_note_description"
+      android:src="@drawable/ic_symbol_check_24"
+      app:backgroundTint="?attr/colorPrimary"
+      app:fabCustomSize="@dimen/act_butt_note_size"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:tint="@android:color/white" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab_note_add_img_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="12dp"
+      android:clickable="true"
+
+      android:contentDescription="@string/image_add_image_description"
+      android:src="@drawable/ic_baseline_image_24"
+      android:visibility="visible"
+      app:backgroundTint="?attr/colorPrimary"
+      app:fabCustomSize="@dimen/act_butt_note_size"
+      app:layout_constraintBottom_toBottomOf="@+id/fab_note_show_colors_icon"
+      app:layout_constraintEnd_toStartOf="@+id/fab_note_show_colors_icon"
+      app:layout_constraintTop_toTopOf="@+id/fab_note_show_colors_icon"
+      app:tint="@android:color/white"
+      tools:visibility="visible" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab_note_show_colors_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="12dp"
+      android:clickable="true"
+
+      android:contentDescription="@string/image_change_color_description"
+      android:src="@drawable/ic_symbol_colors_24"
+      app:backgroundTint="?attr/colorPrimary"
+      app:fabCustomSize="@dimen/act_butt_note_size"
+      app:layout_constraintBottom_toBottomOf="@+id/fab_note_save_icon"
+      app:layout_constraintEnd_toStartOf="@+id/fab_note_save_icon"
+      app:layout_constraintTop_toTopOf="@+id/fab_note_save_icon"
+      app:tint="@android:color/white" />
+
+  <ImageView
+      android:id="@+id/image_note_gradient"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:alpha="0.3"
+      android:contentDescription="@string/image_grad_description"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:srcCompat="@drawable/gradient_shadow"
+      tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

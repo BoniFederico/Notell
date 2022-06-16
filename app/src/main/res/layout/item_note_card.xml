@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/csl_ntcard_page"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_ntcard_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="?attr/colorSecondary"
+        android:hapticFeedbackEnabled="false"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/csl_ntcard_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/image_ntcard_pic_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:adjustViewBounds="true"
+
+                android:minHeight="55dp"
+                android:paddingBottom="5dp"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/csl_ntcard_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:elegantTextHeight="true"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/note_card_title_ph"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_ntcard_pic_preview" />
+
+            <ImageView
+                android:id="@+id/image_ntcard_menu"
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/image_note_menu_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.956"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_symbol_menu_24" />
+
+            <TextView
+                android:id="@+id/text_ntcard_body_preview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="3dp"
+                android:fontFamily="@font/ubuntu_light"
+                android:paddingBottom="0dp"
+                android:text="@string/note_card_body_ph"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/csl_ntcard_title"
+                app:layout_constraintTop_toBottomOf="@+id/csl_ntcard_title" />
+
+            <ImageView
+                android:id="@+id/image_ntcard_banner"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="@color/notell_green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/fl_ntcard_tag_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/image_ntcard_pic_preview">
+
+
+                <ImageView
+                    android:id="@+id/image_ntcard_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/shape_tag"
+                    android:backgroundTint="@color/notell_green"
+                    android:backgroundTintMode="src_in"
+                    android:cropToPadding="false"></ImageView>
+
+                <TextView
+                    android:id="@+id/text_ntcard_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|center_horizontal|center_vertical"
+                    android:fontFamily="@font/ubuntu_medium"
+                    android:gravity="center|center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/note_card_tag_ph"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:layout_editor_absoluteX="349dp"
+                    tools:layout_editor_absoluteY="77dp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/text_ntcard_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/ubuntu_light"
+                android:text="@string/note_card_date_ph"
+                android:textColor="@color/grey_3"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_ntcard_body_preview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
