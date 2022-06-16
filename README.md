@@ -1,6 +1,6 @@
 # Notell
 
-Notell is a note-taking application for Android. It was developed for the Integrated and Mobile Systems course of University of Trieste.
+Notell is a note-taking application for Android. It has been developed for the Integrated and Mobile Systems course of University of Trieste.
 
 ## Demo
 
